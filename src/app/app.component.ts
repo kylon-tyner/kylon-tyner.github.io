@@ -14,16 +14,47 @@ import { RouterOutlet } from '@angular/router';
 export class AppComponent {
   title = 'google-analytics';
 
-  sendEvent(clickEvent: MouseEvent) {
-    window.dataLayer.push({
-      event: 'button_click',
-      origin: 'app.component',
-      page_title: 'App Component',
-      logged_in: false,
-      user_type: 'admin',
-      contact_id: '123456',
-      event_action: 'N/A',
-      event_label: 'Send Click Event'
-    });
+  sendEvent(number: number) {
+    switch (number) {
+      case 0:
+        window.dataLayer.push({
+          event: 'button_click',
+          origin: 'app.component',
+          page_title: 'App Component',
+          logged_in: false,
+          user_type: 'admin',
+          contact_id: '123456',
+          event_action: 'N/A',
+          event_label: 'Send Click Event'
+        });
+        break;
+      case 1:
+        window.dataLayer.push({
+          event: 'button_click',
+          origin: 'app.component',
+          page_title: 'Second Page',
+          logged_in: false,
+          user_type: 'admin',
+          contact_id: '123456',
+          event_action: 'N/A',
+          event_label: 'Send Click Event'
+        });
+        break;
+        case 2:
+          window.dataLayer.push({
+            event: 'button_click',
+            origin: 'app.component',
+            page_title: 'Third Page',
+            logged_in: false,
+            user_type: 'admin',
+            contact_id: '123456',
+            event_action: 'N/A',
+            event_label: 'Send Click Event'
+          });
+          break;
+      default:
+
+    }
+    
   }
 }
